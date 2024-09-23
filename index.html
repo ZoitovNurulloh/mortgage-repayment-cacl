@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Project</title>
+  <title>Mortgage Repayment Calculator</title>
 
   <!-- STYLESHEETS -->
   <link rel="stylesheet" href="./css/normalize.css">
@@ -12,7 +12,104 @@
 </head>
 <body>
 
-    <h1>hello world</h1>
+  <div class="card">
+    <div class="card__content content">
+      <div class="content__head">
+        <h2 class="content__heading">Mortgage Calculator</h2>
+        <a id="btn-clear" class="btn__clear">Clear all</a>
+      </div>
+
+      <form class="form" id="form">
+        <div class="form__groups">
+          <div class="form__group">
+            <h3 class="form__heading">Mortgage amount</h3>
+            <div class="form__inputs">
+              <label  class="form__label">&#163;</label>
+              <input id="form-input" name="form-input" type="text" class="form__input">
+            </div>
+            <span id="form-err" class="form__err"></span>
+          </div>
+        </div>
+
+        <div class="form__groups groups__form">
+          <div class="form__group">
+            <h3 class="form__heading">Mortgage term</h3>
+            <div class="form__inputs">
+              <input id="form-years" name="form-years" type="text" class="form__input">
+              <label  class="form__label">years</label>
+            </div>
+            <span class="form__err"></span>
+          </div>
+
+          <div class="form__group">
+            <h3 class="form__heading">Interest rate</h3>
+            <div class="form__inputs">
+              <input id="form-percentage" name="form-percentage" type="text" class="form__input">
+              <label  class="form__label">%</label>
+            </div>
+            <span class="form__err"></span>
+          </div>
+        </div>
+
+        <div class="form__groups ">
+          <div class="form__group">
+            <h3 class="form__heading">Mortgage type</h3>
+            <div class="form__radios" id="form__radio--repayment">
+              <label for="repayment" class="form__label--radio">Repayment
+                <input id="repayment" name="radios" type="radio" class="form__input--radio">
+                <span class="form__radio--chekc"></span>
+              </label>
+            </div>
+
+            <div class="form__radios" id="form__radio--interest">
+              <label for="interest" class="form__label--radio">Interest only
+                <input id="interest" name="radios" type="radio" class="form__input--radio">
+                <span class="form__radio--chekc"></span>
+              </label>
+            </div>
+            <span  class="form__radio--err"></span>
+          </div>
+        </div>
+
+        <button id="btn" class="btn">
+          <span class="btn__wrapper">
+            <img class="btn__img" src="./images/icon-calculator.svg" alt="Icon calculator" width="24" height="24">
+            <p class="btn__text">Calculate Repayments</p>
+          </span>
+        </button>
+      </form>
+    </div>
+
+    <div class="card__results">
+      <div class="card__calculated calculated" id="calculated">
+        <div class="calculated__info">
+          <h2 class="calculated__heading">Your results</h2>
+          <p class="calculated__description">Your results are shown below based on the information you provided. To adjust the results, edit the form and click “calculate repayments” again.</p>
+        </div>
+
+        <div class="calculated__card">
+          <div class="calculated__top">
+            <h4 class="calculated__monthly">Your monthly repayments</h4>
+            <p class="calculated__balans">&#163; 1,797.74</p>
+          </div>
+          <div class="calculated__bottom">
+            <h4 class="calculated__total">Total you'll repay over the term</h4>
+            <p class="calculated__term">&#163;539,322.94</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="card__empty empty" id="empty">
+        <img src="./images/illustration-empty.svg" class="empty__img" width="192" height="192">
+        <h2 class="empty__heading">Results shown here</h2>
+        <p class="empty__info">Complete the form and click “calculate repayments” to see what your monthly repayments would be.</p>
+      </div>
+    </div>
+  </div>
+
+
+
+
   <script src="/js/index.js"></script>
 </body>
 </html>
